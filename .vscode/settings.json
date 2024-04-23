@@ -1,0 +1,86 @@
+{
+	"cSpell.words": [
+		"autoconvert",
+		"BOOTLOAD",
+		"bootloader",
+		"codegen",
+		"defmt",
+		"dhcpv4",
+		"eeprom",
+		"ENATA",
+		"FOILER",
+		"gpio",
+		"gpioa",
+		"gpiob",
+		"gpioc",
+		"gpiod",
+		"gpioden",
+		"gpioe",
+		"gpiof",
+		"gpiog",
+		"gpioh",
+		"gpioi",
+		"gpioj",
+		"gpiok",
+		"iface",
+		"mdio",
+		"moder",
+		"monotonics",
+		"Oled",
+		"pixelcolor",
+		"proto",
+		"ringbuffer",
+		"RMII",
+		"rprint",
+		"rprintln",
+		"rtic",
+		"serde",
+		"smoltcp",
+		"Stbd",
+		"systick",
+		"thumbv7"
+	],
+	"workbench.colorCustomizations": {
+		"activityBar.activeBackground": "#2f7c47",
+		"activityBar.background": "#2f7c47",
+		"activityBar.foreground": "#e7e7e7",
+		"activityBar.inactiveForeground": "#e7e7e799",
+		"activityBarBadge.background": "#422c74",
+		"activityBarBadge.foreground": "#e7e7e7",
+		"commandCenter.border": "#e7e7e799",
+		"sash.hoverBorder": "#2f7c47",
+		"statusBar.background": "#215732",
+		"statusBar.foreground": "#e7e7e7",
+		"statusBarItem.hoverBackground": "#2f7c47",
+		"statusBarItem.remoteBackground": "#215732",
+		"statusBarItem.remoteForeground": "#e7e7e7",
+		"titleBar.activeBackground": "#215732",
+		"titleBar.activeForeground": "#e7e7e7",
+		"titleBar.inactiveBackground": "#21573299",
+		"titleBar.inactiveForeground": "#e7e7e799"
+	},
+	"peacock.color": "#215732",
+	"editor.links": true,
+	"gitlens.remotes": [
+		{
+			"domain": "git.seanergie.com",
+			"type": "GitLab",
+			"protocol": "https"
+		}
+	],
+	"gitlens.defaultRemote": "origin",
+	"gitlens.codeLens.links": true,
+	"gitlens.autolinks": [
+		{
+			"name": "GitLab",
+			"type": "gitlab",
+			"url": "https://git.seanergie.com"
+		}
+	],
+	"rust-analyzer.linkedProjects": [
+		"./Cargo.toml",
+		"./firmware/Cargo.toml",
+		"./firmware_logic/Cargo.toml",
+		"./shared/Cargo.toml",
+	]
+}

@@ -1,0 +1,12 @@
+[default.general]
+chip = "STM32H747XIHx"
+connect_under_reset = true
+
+[default.rtt]
+enabled = true
+
+[gdb.rtt]
+enabled = false
+
+[gdb.gdb]
+enabled = true

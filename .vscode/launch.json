@@ -1,0 +1,363 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Firmware Debug (defmt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug",
+      },
+      "preLaunchTask": "rust: cargo build debug (defmt) firmware",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false,
+        "formatOptions": {
+          "baseAddress": 134479872 //0x08040000,
+        }
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/debug/wingman_io2_foiler",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "defmtEnabled": true,
+          "options": {
+            "env": {
+              "DEFMT_LOG": "Trace"
+            }
+          },
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              // Format RTT data as String data
+              "dataFormat": "Defmt",
+              // Include host-side timestamps for every line of data transferred from the target RTT output
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    },
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Firmware Debug (rtt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug"
+      },
+      "preLaunchTask": "rust: cargo build debug (rtt) firmware",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false,
+        "formatOptions": {
+          "baseAddress": 134479872 //0x08040000,
+        }
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/debug/wingman_io2_foiler",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              "dataFormat": "String",
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    },
+    // Release configs:
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Firmware Release (defmt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug"
+      },
+      "preLaunchTask": "rust: cargo build release (defmt) firmware",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false,
+        "formatOptions": {
+          "baseAddress": 134479872 //0x08040000,
+        }
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/release/wingman_io2_foiler",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              "dataFormat": "String",
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    },
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Firmware Release (rtt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug"
+      },
+      "preLaunchTask": "rust: cargo build release (rtt) firmware",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false,
+        "formatOptions": {
+          "baseAddress": 134479872 //0x08040000,
+        }
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/release/wingman_io2_foiler",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              "dataFormat": "String",
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    },
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Bootloader Debug (defmt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug",
+      },
+      "preLaunchTask": "rust: cargo build debug (defmt) bootloader",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/debug/bootloader",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "defmtEnabled": true,
+          "options": {
+            "env": {
+              "DEFMT_LOG": "Trace"
+            }
+          },
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              // Format RTT data as String data
+              "dataFormat": "Defmt",
+              // Include host-side timestamps for every line of data transferred from the target RTT output
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    },
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Bootloader Debug (rtt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug"
+      },
+      "preLaunchTask": "rust: cargo build debug (rtt) bootloader",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/debug/bootloader",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              "dataFormat": "String",
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    },
+    // Release configs:
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Bootloader Release (defmt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug"
+      },
+      "preLaunchTask": "rust: cargo build release (defmt) bootloader",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/release/bootloader",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              "dataFormat": "String",
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    },
+    {
+      "type": "probe-rs-debug",
+      "request": "launch",
+      "name": "Bootloader Release (rtt)",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUST_LOG": "debug"
+      },
+      "preLaunchTask": "rust: cargo build release (rtt) bootloader",
+      "connectUnderReset": true,
+      "runtimeExecutable": "probe-rs-debugger",
+      "runtimeArgs": [
+        "debug"
+      ],
+      "chip": "STM32H747XIH",
+      "flashingConfig": {
+        "flashingEnabled": true,
+        "resetAfterFlashing": true,
+        "haltAfterReset": false
+      },
+      "coreConfigs": [
+        {
+          "coreIndex": 0,
+          "programBinary": "target/thumbv7em-none-eabihf/release/bootloader",
+          "svdFile": "STM32H747_CM7.svd",
+          "rttEnabled": true,
+          "rttChannelFormats": [
+            {
+              "channelNumber": 0,
+              "dataFormat": "String",
+              "showTimestamps": true
+            },
+            {
+              "channelNumber": 1,
+              "dataFormat": "BinaryLE"
+            }
+          ]
+        }
+      ],
+      "consoleLogLevel": "Info"
+    }
+  ]
+}

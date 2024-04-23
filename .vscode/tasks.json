@@ -1,0 +1,87 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rust: cargo build debug (defmt) firmware",
+            "type": "shell",
+            "command": "cargo build --features defmt --config .cargo/config_defmt.toml --package wingman_io2_foiler",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "rust: cargo build release (defmt) firmware",
+            "type": "shell",
+            "command": "cargo build --release --features defmt --config .cargo/config_defmt.toml --package wingman_io2_foiler",
+            "group": "build",
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "rust: cargo build debug (rtt) firmware",
+            "type": "shell",
+            "command": "cargo build --features rtt --config .cargo/config.toml --package wingman_io2_foiler",
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "rust: cargo build release (rtt) firmware",
+            "type": "shell",
+            "command": "cargo build --release --features rtt --config .cargo/config.toml --package wingman_io2_foiler",
+            "group": "build",
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "rust: cargo build debug (defmt) bootloader",
+            "type": "shell",
+            "command": "cargo build --features defmt --config .cargo/config_defmt.toml --package bootloader",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "rust: cargo build release (defmt) bootloader",
+            "type": "shell",
+            "command": "cargo build --release --features defmt --config .cargo/config_defmt.toml --package bootloader",
+            "group": "build",
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "rust: cargo build debug (rtt) bootloader",
+            "type": "shell",
+            "command": "cargo build --features rtt .cargo/config.toml --package bootloader",
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "rust: cargo build release (rtt) bootloader",
+            "type": "shell",
+            "command": "cargo build --release --features rtt .cargo/config.toml --package bootloader",
+            "group": "build",
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+    ]
+}

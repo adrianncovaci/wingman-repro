@@ -1,0 +1,32 @@
+[workspace]
+members = [ 
+    "firmware",
+    "firmware_logic",
+]
+resolver = "2"
+
+[workspace.dependencies]
+uom = { version = "0.36", default-features = false, features = ["autoconvert", "f32", "si"] }
+
+# real time operation
+rtic = { version = "2", features = ["thumbv7-backend", "rtic-monotonics"] }
+rtic-monotonics = { version = "1.5.0", features = ["cortex-m-systick", "stm32h747xi-cm7", "systick-64bit"] }
+
+# hardware abstraction and peripheral access
+stm32h7xx-hal = { version = "0.16", features = ["rt", "stm32h747cm7", "ethernet", "can", "xspi", "crc"] }
+cortex-m = { version ="0.7", features = ["critical-section-single-core"]} 
+cortex-m-rt = "0.7"
+asm-delay = "1"
+
+# error
+panic-probe = "0.3"
+
+# networking
+smoltcp = { version = "0.11", default-features = false, features = ["proto-ipv4", "proto-dhcpv4", "medium-ip", "medium-ethernet", "socket-tcp", "socket-udp", "socket-icmp", "proto-ipv4-fragmentation", "socket-dhcpv4"] }
+
+# storage
+embedded-storage = "0.3"
+
+# enum utils
+strum = {  version = "0.26", default-features = false }
+strum_macros = "0.26"

@@ -1,0 +1,4 @@
+# udev rules to allow access to ST-LINK/v2 USB devices as a non-root user
+
+# ST-LINK/V2 ISOL Dongle in bootloader mode
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", TAG+="uaccess"
